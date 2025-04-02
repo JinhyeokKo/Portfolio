@@ -1,4 +1,4 @@
-import Projects from "./Projects";
+import Project from "./Project.jsx";
 import Blog from "./Blog";
 import Cover from "./Cover.jsx";
 import styled from "styled-components";
@@ -24,7 +24,7 @@ export default function Home() {
             </First>
             <Second>
                 <About/>
-                <Projects/>
+                <Project/>
                 <Blog/>
             </Second>
         </>

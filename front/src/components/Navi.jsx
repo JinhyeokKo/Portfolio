@@ -1,7 +1,7 @@
 import {useState} from "react";
 import {Link} from "react-router-dom";
 import styled from "styled-components";
-import {useTheme} from "./ui/ThemeContext.jsx";
+import {useTheme} from "./ui/useTheme.jsx";
 import {FiMenu, FiX} from "react-icons/fi";
 import {MdDarkMode, MdLightMode} from "react-icons/md";
 
@@ -38,7 +38,6 @@ const NavLinks = styled.div`
     }
 
     @media (max-width: 48rem) {
-        /* 768px -> 48rem */
         flex-direction: column;
         position: absolute;
         top: 3rem;
@@ -69,7 +68,6 @@ const MenuButton = styled.button`
     color: ${(props) => props.theme.textColor};
 
     @media (max-width: 48rem) {
-        /* 768px 이하일 때 버튼 표시 */
         display: block;
     }
 `;
@@ -84,8 +82,8 @@ export default function Navi() {
             <NavContainer>
                 <NavLinks $isOpen={isOpen}>
                     <Link to="/" onClick={() => setIsOpen(false)}>Home</Link>
-                    <Link to="/about" onClick={() => setIsOpen(true)}>About Me</Link>
-                    <Link to="/project" onClick={() => setIsOpen(false)}>Projects</Link>
+                    <Link to="/project" onClick={() => setIsOpen(false)}>Project</Link>
+                    <a href="https://github.com/JinhyeokKo" target="_blank" rel="noopener noreferrer" onClick={() => setIsOpen(false)}>GitHub</a>
                     <Link to="/blog" onClick={() => setIsOpen(false)}>Blog</Link>
                 </NavLinks>
                 <ToggleButton onClick={toggleTheme}>
