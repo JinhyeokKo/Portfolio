@@ -116,12 +116,15 @@ export const Skill = [
 ]
 
 export const dummyProjects = [
-    {id: 1, title: "Project 1", description: "React 포트폴리오", url: "https://raw.githubusercontent.com/Plastic-Recycling/.github/refs/heads/main/profile/README.md"},
-    {id: 2, title: "Project 2", description: "Next.js 블로그", url: "https://raw.githubusercontent.com/Plastic-Recycling/.github/refs/heads/main/profile/README.md"},
-    {id: 3, title: "Project 3", description: "Vue.js 대시보드", url: "https://raw.githubusercontent.com/Plastic-Recycling/.github/refs/heads/main/profile/README.md"},
-    {id: 4, title: "Project 4", description: "Svelte 랜딩페이지", url: "https://raw.githubusercontent.com/Plastic-Recycling/.github/refs/heads/main/profile/README.md"},
-    {id: 5, title: "Project 5", description: "Node.js API 서버", url: "https://raw.githubusercontent.com/Plastic-Recycling/.github/refs/heads/main/profile/README.md"},
-    {id: 6, title: "Project 6", description: "Python Flask 앱", url: "https://raw.githubusercontent.com/Plastic-Recycling/.github/refs/heads/main/profile/README.md"},
+    {id: 1, title: "Project 1", description: "React 포트폴리오", type:"Web", url: "https://raw.githubusercontent.com/Plastic-Recycling/.github/refs/heads/main/profile/README.md"},
+    {id: 2, title: "Project 2", description: "Next.js 블로그", type:"MCU", url: "https://raw.githubusercontent.com/Plastic-Recycling/.github/refs/heads/main/profile/README.md"},
+    {id: 3, title: "Project 3", description: "Vue.js 대시보드", type:"Web", url: "https://raw.githubusercontent.com/Plastic-Recycling/.github/refs/heads/main/profile/README.md"},
+    {id: 4, title: "Project 4", description: "Svelte 랜딩페이지", type:"Web", url: "https://raw.githubusercontent.com/Plastic-Recycling/.github/refs/heads/main/profile/README.md"},
+    {id: 5, title: "Project 5", description: "Node.js API 서버", type:"Web", url: "https://raw.githubusercontent.com/Plastic-Recycling/.github/refs/heads/main/profile/README.md"},
+    {id: 6, title: "Project 6", description: "Python Flask 앱", type:"MCU", url: "https://raw.githubusercontent.com/Plastic-Recycling/.github/refs/heads/main/profile/README.md"},
+    {id: 7, title: "Project 7", description: "Python Flask 앱", type:"MCU", url: "https://raw.githubusercontent.com/Plastic-Recycling/.github/refs/heads/main/profile/README.md"},
+    {id: 8, title: "Project 8", description: "Python Flask 앱", type:"Toy", url: "https://raw.githubusercontent.com/Plastic-Recycling/.github/refs/heads/main/profile/README.md"},
+
 ];
 
 export const dummyBlog = [

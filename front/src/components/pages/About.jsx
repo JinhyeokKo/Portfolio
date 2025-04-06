@@ -2,7 +2,7 @@ import styled from "styled-components";
 import {FaBirthdayCake, FaCertificate, FaEnvelope, FaGithub, FaUniversity, FaUser} from "react-icons/fa";
 import React from "react";
 import {ContentTitle, Description, Section, Title} from "../ui/CommonStyles.jsx"
-import {about, Skill} from "../Dummy.jsx"
+import {about, Skill} from "../data/Dummy.jsx"
 
 const SectionAbout = styled(Section)`
     display: flex;
@@ -72,7 +72,7 @@ const SkillImage = styled.svg`
 
 export default function About() {
     return (
-        <SectionAbout>
+        <SectionAbout id="about">
             <Intro>
                 <Title>About Me</Title>
                 <List>

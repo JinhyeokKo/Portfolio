@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import {useEffect} from "react";
+import ReactDOM from "react-dom";
 
 const ModalBackground = styled.div`
     position: fixed;
@@ -12,9 +13,8 @@ const ModalBackground = styled.div`
     align-items: flex-start;
     justify-content: center;
     z-index: 11;
-
-    backdrop-filter: blur(1rem); /* 블러 효과 추가 */
-    -webkit-backdrop-filter: blur(1rem); /* 사파리 지원 */
+    backdrop-filter: blur(1rem);
+    -webkit-backdrop-filter: blur(1rem);
 `;
 
 const ModalContent = styled.div`
@@ -72,12 +72,14 @@ export default function Modal({ isOpen, onClose, children }) {
 
     if (!isOpen) return null; // 모달이 닫혀 있으면 렌더링 안 함
 
-    return (
+    const modal = (
         <ModalBackground onClick={onClose}>
             <ModalContent onClick={(e) => e.stopPropagation()}>
-                {children} {/* 모달 내부 내용을 동적으로 받을 수 있도록 */}
+                {children}
             </ModalContent>
             <CloseButton onClick={onClose}>X</CloseButton>
         </ModalBackground>
     );
+
+    return ReactDOM.createPortal(modal, document.body);
 }
