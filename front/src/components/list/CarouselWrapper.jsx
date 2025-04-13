@@ -11,6 +11,7 @@ const CarouselContainer = styled.div`
 `;
 
 export default function CarouselWrapper({items, renderItem, currentPageIndex, onPageChange}) {
+
     const {
         currentIndex,
         itemsPerPage,
@@ -19,7 +20,7 @@ export default function CarouselWrapper({items, renderItem, currentPageIndex, on
         handleNext,
         containerRef,
         setCurrentIndex,
-    } = usePagination(items.length, 240, 400);
+    } = usePagination(items.length, 320, 336);
 
     const groupedItems = useGroupedItems(items, itemsPerPage);
 

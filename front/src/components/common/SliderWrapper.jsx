@@ -3,16 +3,15 @@ import styled from "styled-components";
 
 const Slider = styled.div`
     display: flex;
+    justify-content: flex-start;
     transition: transform 0.5s ease-in-out;
 `;
 
 const Slide = styled.div`
     display: flex;
     flex: 0 0 100%;
-    justify-content: flex-start;
-    padding: 1rem;
-    margin: 0 auto;
     box-sizing: border-box;
+    padding: 1rem;
 `;
 
 export default function SliderWrapper({ groupedItems, currentIndex, renderItem }) {

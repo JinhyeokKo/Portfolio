@@ -12,7 +12,6 @@ const NavButton = styled.button`
     background: none;
     border: none;
     font-size: 1.2rem;
-    cursor: pointer;
     opacity: 0.6;
     color: ${(props) => props.theme.textColor};
 

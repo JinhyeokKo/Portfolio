@@ -1,22 +1,33 @@
 import styled from "styled-components";
 
 export const Section = styled.section`
-    width: 90vw;
-    height: 100vh;
-    margin: 0 auto;
+    width: 100vw;
+    min-height: 100vh;
+    margin: 0;
+    padding: 1rem;
     box-sizing: border-box;
-
-    @media (min-width: 1024px) {
-        padding-left: 20rem;
-    }
+    overflow: hidden;
 `;
 
+export const Container = styled.div`
+    width: 100%;
+    max-width: 1024px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+
+    @media (max-width: 1600px) and (min-width: 1400px) {
+        padding-left: 200px;
+    }
+`
+
 export const Title = styled.h2`
-    font-size: 2.5rem; /* 24px -> 1.5rem */
+    font-size: 2.5rem;
     font-weight: 700;
-    margin-bottom: 1rem; /* 16px -> 1rem */
-    @media (min-width: 1024px) {
-        opacity: 0;
+    margin-bottom: 1rem;
+    @media (min-width: 1400px) {
+        //opacity: 0;
     }
 `;
 
@@ -32,12 +43,15 @@ export const Description = styled.p`
 
 export const Item = styled.div`
     position: relative;
-    background: ${(props) => props.theme.backgroundColor};
-    margin: 0 auto;
-    padding: 1rem; /* 16px -> 1rem */
-    border-radius: 0.5rem; /* 8px -> 0.5rem */
-    box-shadow: 0 0.25rem 0.375rem ${(props) => props.theme.shadowColor}; /* 4px 6px -> 0.25rem 0.375rem */
-    width: clamp(15rem, 20rem, 25rem);
+    background: ${(props) => props.theme.boxBackground};
+    margin: 0 1rem 1rem;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.5rem 2rem 0 ${(props) => props.theme.boxShadow};
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    backdrop-filter: blur( 1px );
+    -webkit-backdrop-filter: blur( 1px );
+    width: 18rem;
     height: 25rem;
     flex: 0 0 auto;
     box-sizing: border-box;
@@ -56,6 +70,11 @@ export const Item = styled.div`
 
     &:hover button {
         opacity: 1;
+    }
+
+    @media (max-width: 479px) {
+        margin: 0 0 1rem;
+        
     }
 `;
 

@@ -7,7 +7,7 @@ const ScrollButton = styled.button`
     bottom: 2rem;
     right: 2rem;
     font-size: 2rem;
-    background-color: ${(props) => props.theme.backgroundColor};
+    background-color: ${(props) => props.theme.itemBgColor};
     color: ${(props) => props.theme.textColor};
     border: none;
     border-radius: 50%;
@@ -20,22 +20,35 @@ const ScrollButton = styled.button`
 
 export default function ScrollToTopButton() {
     const [isVisible, setIsVisible] = useState(false);
+    const [isPC, setIsPC] = useState(window.innerWidth >= 1024);
 
     useEffect(() => {
-        const toggleVisibility = () => {
+        const handleResize = () => {
+            setIsPC(window.innerWidth >= 1024);
+        };
+
+        const handleScroll = () => {
             setIsVisible(window.scrollY > 700);
         };
 
-        window.addEventListener("scroll", toggleVisibility);
-        return () => window.removeEventListener("scroll", toggleVisibility);
+        window.addEventListener("resize", handleResize);
+        window.addEventListener("scroll", handleScroll);
+
+        // 초기 실행
+        handleResize();
+        handleScroll();
+
+        return () => {
+            window.removeEventListener("resize", handleResize);
+            window.removeEventListener("scroll", handleScroll);
+        };
     }, []);
 
-    const scrollToTop = () => {
-        window.scrollTo({ top: 0, behavior: "smooth" });
-    };
+    // PC가 아니면 렌더링 안 함
+    if (!isPC) return null;
 
     return (
-        <ScrollButton onClick={scrollToTop} $visible={isVisible}>
+        <ScrollButton onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} $visible={isVisible}>
             <FiArrowUp />
         </ScrollButton>
     );

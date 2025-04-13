@@ -12,7 +12,7 @@ const Sidebar = styled.nav`
     z-index: 10;
     opacity: 0;
 
-    @media (min-width:1024px) {
+    @media (min-width:1400px) {
         opacity: 1;
     }
 `;
@@ -26,14 +26,19 @@ const NavItem = styled.a`
     &:hover {
         color: ${(props) => props.theme.textColor};
     }
+
+    @media (max-width: 1600px) and (min-width: 1400px) {
+        font-size: 2rem;
+    }
 `;
 
 export default function SideNavi({ currentSection }) {
     return (
         <Sidebar>
-            <NavItem href="#about" $active={currentSection === "about"}>소개</NavItem>
-            <NavItem href="#projects" $active={currentSection === "projects"}>프로젝트</NavItem>
-            <NavItem href="#blog" $active={currentSection === "blog"}>블로그</NavItem>
+            <NavItem href="#profile" $active={currentSection === "profile"}>About Me</NavItem>
+            <NavItem href="#interview" $active={currentSection === "interview"}>Interview</NavItem>
+            <NavItem href="#skills" $active={currentSection === "skills"}>Skills & Tools</NavItem>
+            <NavItem href="#projects" $active={currentSection === "projects"}>Project</NavItem>
         </Sidebar>
     );
 }

@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import {Section, Title} from "../ui/CommonStyles.jsx"
+import {Container, Section, Title} from "../ui/CommonStyles.jsx"
 import CarouselWrapper from "../list/CarouselWrapper.jsx";
 import {dummyProjects} from "../data/Dummy.jsx";
 import ProjectListItem from "../list/ProjectListItem.jsx";
@@ -7,25 +7,28 @@ import styled from "styled-components";
 
 const TypeMenu = styled.div`
     display: flex;
-    justify-content: center;
-    margin-bottom: 3rem;
-    margin-top: 3rem;
+    justify-content: flex-start;
+    margin: 3rem;
     gap: 1rem;
     flex-wrap: wrap;
+
+    @media (max-width: 479px) {
+        margin: 1rem;
+    }
 `;
 
 const TypeButton = styled.button`
     padding: 0.5rem 1rem;
-    background-color: ${props => props.theme.backgroundColor};
+    background-color: ${props => props.theme.itemBgColor};
     color: ${props => props.theme.textColor};
-    border: 1px solid ${props => props.active ? "#5e6eff" : props.theme.textColor};
+    border: 1px solid ${props => props.$active ? "#5e6eff" : props.theme.textColor};
     border-radius: 4px;
     cursor: pointer;
     transition: all 0.3s ease;
 
     &:hover {
-        background-color: ${props => props.active ? props.theme.accentColor : props.theme.accentColorLight};
-        color: ${props => props.active ? props.theme.accentColor : props.theme.accentColorLight};
+        background-color: ${props => props.$active ? props.theme.accentColor : props.theme.accentColorLight};
+        color: ${props => props.$active ? props.theme.accentColor : props.theme.accentColorLight};
     }
 `;
 
@@ -59,25 +62,27 @@ export default function Project() {
 
     return (
         <Section id="projects">
-            <Title>Projects</Title>
+            <Container>
+                <Title>Projects</Title>
 
-            <TypeMenu>
-                {projectTypes.map((type) => (
-                    <TypeButton
-                        key={type}
-                        active={activeType === type}
-                        onClick={() => filterByType(type)}
-                    >
-                        {type}
-                    </TypeButton>
-                ))}
-            </TypeMenu>
+                <TypeMenu>
+                    {projectTypes.map((type) => (
+                        <TypeButton
+                            key={type}
+                            $active={activeType === type}
+                            onClick={() => filterByType(type)}
+                        >
+                            {type}
+                        </TypeButton>
+                    ))}
+                </TypeMenu>
 
-            <CarouselWrapper
-                items={displayedProjects}
-                renderItem={(project) => <ProjectListItem key={project.id} project={project}/>}
-                currentPageIndex={currentPageIndex} onPageChange={setCurrentPageIndex}
-            />
+                <CarouselWrapper
+                    items={displayedProjects}
+                    renderItem={(project) => <ProjectListItem key={project.id} project={project}/>}
+                    currentPageIndex={currentPageIndex} onPageChange={setCurrentPageIndex}
+                />
+            </Container>
         </Section>
     );
 }
