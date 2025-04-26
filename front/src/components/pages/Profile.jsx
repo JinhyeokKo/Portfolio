@@ -2,6 +2,7 @@ import {ContentTitle, Section, Title, Container} from "../ui/CommonStyles.jsx";
 import styled from "styled-components";
 import {FaBirthdayCake, FaCertificate, FaEnvelope, FaGithub, FaUniversity, FaUser} from "react-icons/fa";
 import ProfileImg from "../../assets/profile.png"
+import Skill from "./Skill.jsx";
 
 const AboutMe = styled.div`
     display: flex;
@@ -45,6 +46,9 @@ const InfoItemDescription = styled.li`
     padding-left: 2rem;
 `
 
+const Skills = styled.div`
+`
+
 export default function Profile() {
     return (
         <Section id="profile">
@@ -80,6 +84,10 @@ export default function Profile() {
                         <InfoItemDescription>2024.06.21</InfoItemDescription>
                     </InfoList>
                 </AboutMe>
+                <Skills>
+                    <Title>Skills & Tools</Title>
+                    <Skill/>
+                </Skills>
             </Container>
         </Section>
     )

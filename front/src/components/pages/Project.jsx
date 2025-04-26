@@ -1,9 +1,12 @@
 import React, {useEffect, useState} from "react";
 import {Container, Section, Title} from "../ui/CommonStyles.jsx"
-import CarouselWrapper from "../list/CarouselWrapper.jsx";
+import CarouselWrapper from "../carousel/CarouselWrapper.jsx";
 import {dummyProjects} from "../data/Dummy.jsx";
 import ProjectListItem from "../list/ProjectListItem.jsx";
 import styled from "styled-components";
+import Modal from "../ui/Modal.jsx";
+import DocumentViewer from "../viewer/DocumentViewer.jsx";
+import ProjectViewer from "../viewer/ProjectViewer.jsx";
 
 const TypeMenu = styled.div`
     display: flex;
@@ -23,7 +26,6 @@ const TypeButton = styled.button`
     color: ${props => props.theme.textColor};
     border: 1px solid ${props => props.$active ? "#5e6eff" : props.theme.textColor};
     border-radius: 4px;
-    cursor: pointer;
     transition: all 0.3s ease;
 
     &:hover {
@@ -38,6 +40,8 @@ export default function Project() {
     const [activeType, setActiveType] = useState("All");
     const [projectTypes, setProjectTypes] = useState(["All"]);
     const [currentPageIndex, setCurrentPageIndex] = useState(0);
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [selectedProject, setSelectedProject] = useState(null);
 
     useEffect(() => {
         setProjects(dummyProjects);
@@ -60,6 +64,11 @@ export default function Project() {
         }
     };
 
+    const handleOpenModal = (project) => {
+        setSelectedProject(project);
+        setIsModalOpen(true);
+    };
+
     return (
         <Section id="projects">
             <Container>
@@ -79,9 +88,19 @@ export default function Project() {
 
                 <CarouselWrapper
                     items={displayedProjects}
-                    renderItem={(project) => <ProjectListItem key={project.id} project={project}/>}
+                    renderItem={(project) => <ProjectListItem key={project.id} project={project}
+                                                              onOpenModal={() => handleOpenModal(project)}/>}
                     currentPageIndex={currentPageIndex} onPageChange={setCurrentPageIndex}
                 />
+                {selectedProject && (
+                    <Modal
+                        isOpen={isModalOpen}
+                        onClose={() => setIsModalOpen(false)}>
+                        <ProjectViewer logo={selectedProject.logo} title={selectedProject.title}
+                                       description={selectedProject.description} term={selectedProject.term}/>
+                        <DocumentViewer url={selectedProject.url} intro={selectedProject.intro}/>
+                    </Modal>
+                )}
             </Container>
         </Section>
     );

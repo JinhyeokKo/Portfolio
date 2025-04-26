@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import useTheme from "../../context/theme/useTheme.jsx";
 import {MdDarkMode, MdLightMode} from "react-icons/md";
-import FullscreenToggle from "./FullscreenToggle.jsx";
+import FullscreenToggle from "../screen/FullscreenToggle.jsx";
 
 const Nav = styled.nav`
     position: fixed;

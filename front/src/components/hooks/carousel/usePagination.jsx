@@ -5,6 +5,9 @@ export default function usePagination(totalItems, itemMinWidth, itemMaxWidth) {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [itemsPerPage, setItemsPerPage] = useState(1);
     const [totalSlides, setTotalSlides] = useState(1);
+    const [isDragging, setIsDragging] = useState(false);
+    const [startX, setStartX] = useState(0);
+    const [scrollLeft, setScrollLeft] = useState(0);
 
     useEffect(() => {
         const getAvgItemWidth = () => (itemMinWidth + itemMaxWidth) / 2;
@@ -42,5 +45,11 @@ export default function usePagination(totalItems, itemMinWidth, itemMaxWidth) {
         handleNext,
         setCurrentIndex,
         containerRef,
+        isDragging,
+        setIsDragging,
+        startX,
+        setStartX,
+        scrollLeft,
+        setScrollLeft
     };
 }

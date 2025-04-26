@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, {css} from "styled-components";
 
 export const Section = styled.section`
     width: 100vw;
@@ -26,9 +26,6 @@ export const Title = styled.h2`
     font-size: 2.5rem;
     font-weight: 700;
     margin-bottom: 1rem;
-    @media (min-width: 1400px) {
-        //opacity: 0;
-    }
 `;
 
 export const ContentTitle = styled.h3`
@@ -48,9 +45,9 @@ export const Item = styled.div`
     padding: 1rem;
     border-radius: 0.5rem;
     box-shadow: 0 0.5rem 2rem 0 ${(props) => props.theme.boxShadow};
-    border: 1px solid rgba( 255, 255, 255, 0.18 );
-    backdrop-filter: blur( 1px );
-    -webkit-backdrop-filter: blur( 1px );
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(1px);
+    -webkit-backdrop-filter: blur(1px);
     width: 18rem;
     height: 25rem;
     flex: 0 0 auto;
@@ -59,35 +56,18 @@ export const Item = styled.div`
 
     &:hover {
         top: 0;
-        box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+        box-shadow: 0 1rem 2rem 0 ${(props) => props.theme.boxShadow}, 0 0.5rem 1rem 0 ${(props) => props.theme.boxShadow};
         transition: top 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    &:hover p {
-        opacity: 0;
-        transition: opacity 0.3s ease;
-    }
-
-    &:hover button {
-        opacity: 1;
+        ${(props) =>
+                !props.$isTouchDevice &&
+                css`
+                top: 1rem;
+            `};
     }
 
     @media (max-width: 479px) {
         margin: 0 0 1rem;
-        
     }
-`;
-
-export const Button = styled.button`
-    position: absolute;
-    bottom: 50%;
-    left: 50%;
-    transform: translateX(-50%);
-    padding: 8px 16px;
-    border: none;
-    border-radius: 4px;
-    opacity: 0;
-    transition: opacity 0.3s ease;
 `;
 
 
