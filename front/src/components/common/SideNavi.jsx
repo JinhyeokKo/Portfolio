@@ -11,9 +11,13 @@ const Sidebar = styled.nav`
     gap: 1rem;
     z-index: 10;
     opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
 
     @media (min-width:1400px) {
         opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
     }
 `;
 
@@ -37,7 +41,6 @@ export default function SideNavi({ currentSection }) {
         <Sidebar>
             <NavItem href="#profile" $active={currentSection === "profile"}>About Me</NavItem>
             <NavItem href="#interview" $active={currentSection === "interview"}>Interview</NavItem>
-            <NavItem href="#skills" $active={currentSection === "skills"}>Skills & Tools</NavItem>
             <NavItem href="#projects" $active={currentSection === "projects"}>Project</NavItem>
         </Sidebar>
     );

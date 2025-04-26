@@ -1,17 +1,19 @@
-import PageNavi from "../common/PageNavi.jsx";
+import PageNavi from "./PageNavi.jsx";
 import styled from "styled-components";
-import SliderWrapper from "../common/SliderWrapper.jsx";
-import usePagination from "../hooks/usePagination.jsx";
-import useGroupedItems from "../hooks/useGroupedItems.jsx";
+import SliderWrapper from "./SliderWrapper.jsx";
+import usePagination from "../hooks/carousel/usePagination.jsx";
+import useGroupedItems from "../hooks/carousel/useGroupedItems.jsx";
 import {useEffect} from "react";
+import useSwipe from "../hooks/carousel/useSwipe.jsx";
 
 const CarouselContainer = styled.div`
     position: relative;
     overflow: hidden;
+    touch-action: auto;
+    cursor: ${props => props.$isDragging ? "grabbing" : "grab"};
 `;
 
 export default function CarouselWrapper({items, renderItem, currentPageIndex, onPageChange}) {
-
     const {
         currentIndex,
         itemsPerPage,
@@ -23,6 +25,27 @@ export default function CarouselWrapper({items, renderItem, currentPageIndex, on
     } = usePagination(items.length, 320, 336);
 
     const groupedItems = useGroupedItems(items, itemsPerPage);
+
+    const handlePageChange = (newIndex) => {
+        if (onPageChange) {
+            onPageChange(newIndex);
+        }
+    };
+
+    const { isDragging, handlers } = useSwipe({
+        onSwipeLeft: () => {
+            if (currentIndex < totalSlides - 1) {
+                handleNext();
+                handlePageChange(currentIndex + 1);
+            }
+        },
+        onSwipeRight: () => {
+            if (currentIndex > 0) {
+                handlePrev();
+                handlePageChange(currentIndex - 1);
+            }
+        }
+    });
 
     useEffect(() => {
         if (currentPageIndex !== undefined && onPageChange) {
@@ -39,16 +62,13 @@ export default function CarouselWrapper({items, renderItem, currentPageIndex, on
         }
     }, [items, itemsPerPage, totalSlides, currentIndex, setCurrentIndex, onPageChange]);
 
-    const handlePageChange = (newIndex) => {
-        if (onPageChange) {
-            onPageChange(newIndex);
-        }
-    };
-
     return (
         <>
 
-            <CarouselContainer ref={containerRef}>
+            <CarouselContainer ref={containerRef}
+                               $isDragging={isDragging}
+                               {...handlers}
+            >
                 <SliderWrapper groupedItems={groupedItems} currentIndex={currentIndex} renderItem={renderItem}/>
             </CarouselContainer>
 
