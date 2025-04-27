@@ -17,6 +17,7 @@ const Description = styled.p`
 `
 
 const Img = styled.img`
+    max-width: 48rem;
     width: 40vw;
     border: 1rem solid ${(props) => props.theme.textColor};
     border-radius: 1rem;
