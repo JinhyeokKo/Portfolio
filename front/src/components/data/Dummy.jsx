@@ -25,11 +25,5 @@ export const about = [
 export const dummyProjects = [
     {id: 1, title: "Plastic-Recycle", description: "플라스틱 재활용 관리 서비스", term: "2024.07 ~ 2024.08", type:"Web", tag:"Back", logo: Plastic, intro: "/plasticIntro.md", url: "/plastic.md"},
     {id: 2, title: "피어나다", description: "농림축산식품부 아이디어 기획 공모전", type:"ETC", tag:"Design", logo: Bloom, intro: "/bloomIntro.md", url: "/bloom.pdf"},
-    {id: 3, title: "Portfolio", description: "개인 포트폴리오 사이트", term:"2025.04 ~ ", type:"Web", tag:"Front", logo: Portfolio, url: "https://raw.githubusercontent.com/JinhyeokKo/Portfolio/refs/heads/main/README.md"},
-    {id: 4, title: "Project 4", description: "Svelte 랜딩페이지", type:"Web", tag:"web", logo: "https://raw.githubusercontent.com/Plastic-Recycling/.github/refs/heads/main/profile/logoW.png", url: "https://raw.githubusercontent.com/Plastic-Recycling/.github/refs/heads/main/profile/README.md"},
-    {id: 5, title: "Project 5", description: "Node.js API 서버", type:"Web", tag:"web", logo: "https://raw.githubusercontent.com/Plastic-Recycling/.github/refs/heads/main/profile/logoW.png", url: "https://raw.githubusercontent.com/Plastic-Recycling/.github/refs/heads/main/profile/README.md"},
-    {id: 6, title: "Project 6", description: "Python Flask 앱", type:"MCU", tag:"web", logo: "https://raw.githubusercontent.com/Plastic-Recycling/.github/refs/heads/main/profile/logoW.png", url: "https://raw.githubusercontent.com/Plastic-Recycling/.github/refs/heads/main/profile/README.md"},
-    {id: 7, title: "Project 7", description: "Python Flask 앱", type:"MCU", tag:"web", logo: "https://raw.githubusercontent.com/Plastic-Recycling/.github/refs/heads/main/profile/logoW.png", url: "https://raw.githubusercontent.com/Plastic-Recycling/.github/refs/heads/main/profile/README.md"},
-    {id: 8, title: "Project 8", description: "Python Flask 앱", type:"ETC", tag:"web", logo: "https://raw.githubusercontent.com/Plastic-Recycling/.github/refs/heads/main/profile/logoW.png", url: "https://raw.githubusercontent.com/Plastic-Recycling/.github/refs/heads/main/profile/README.md"},
-
+    {id: 3, title: "Portfolio", description: "개인 포트폴리오 사이트", term:"2025.03 ~ 2025.04", type:"Web", tag:"Front", logo: Portfolio, intro: "/portfolioIntro.md", url: "/portfolio.md"},
 ];
