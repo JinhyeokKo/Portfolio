@@ -61,32 +61,37 @@
 
 
 ### 화면 (해상도와 디바이스에 따라 스타일이 다소 다를 수 있습니다.)
-|Main|
-|----|
-|![section1](https://raw.githubusercontent.com/JinhyeokKo/Portfolio/main/docs/section1.jpg)|
-|- 간략한 소개 표시|
+| Main                                                                                       |
+|--------------------------------------------------------------------------------------------|
+| ![section1](https://raw.githubusercontent.com/JinhyeokKo/Portfolio/main/docs/section1.jpg) |
+| - 간략한 소개 표시                                                                                |
 
-|About Me|
-|--------|
-|![section2](https://raw.githubusercontent.com/JinhyeokKo/Portfolio/main/docs/section2.jpg)|
-|- 개인 이력 및 스킬 표시|
+| About Me                                                                                   |
+|--------------------------------------------------------------------------------------------|
+| ![section2](https://raw.githubusercontent.com/JinhyeokKo/Portfolio/main/docs/section2.jpg) |
+| - 개인 이력 및 스킬 표시                                                                            |
 
-|Interview|
-|--------|
-|![section3](https://raw.githubusercontent.com/JinhyeokKo/Portfolio/main/docs/section3.jpg)|
-|- 셀프 인터뷰 형식 간략한 소개|
+| Interview                                                                                  |
+|--------------------------------------------------------------------------------------------|
+| ![section3](https://raw.githubusercontent.com/JinhyeokKo/Portfolio/main/docs/section3.jpg) |
+| - 셀프 인터뷰 형식 간략한 소개                                                                         |
 
-|Project|
-|--------|
-|![section4](https://raw.githubusercontent.com/JinhyeokKo/Portfolio/main/docs/section4.jpg)|
-|- 카드 형식으로 프토젝트 안내<br/>- 탭 메뉴로 카테고리별 확인<br/>- 페이지 버튼 혹은 그랩으로 슬라이드 이동|
+| Project                                                                                    |
+|--------------------------------------------------------------------------------------------|
+| ![section4](https://raw.githubusercontent.com/JinhyeokKo/Portfolio/main/docs/section4.jpg) |
+| - 카드 형식으로 프토젝트 안내<br/>- 탭 메뉴로 카테고리별 확인<br/>- 페이지 버튼 혹은 그랩으로 슬라이드 이동                        |
 
-|Project Modal|
-|--------|
-|![modal1](https://raw.githubusercontent.com/JinhyeokKo/Portfolio/main/docs/modal1.jpeg)|
-|- 프로젝트 상세 정보 및 내용(기간, 설명, 작업, 기술)|
+| Project Modal                                                                           |
+|-----------------------------------------------------------------------------------------|
+| ![modal1](https://raw.githubusercontent.com/JinhyeokKo/Portfolio/main/docs/modal1.jpeg) |
+| - 프로젝트 상세 정보 및 내용(기간, 설명, 작업, 기술)                                                       |
 
-|Project Modal|
-|--------|
-|![modal2](https://raw.githubusercontent.com/JinhyeokKo/Portfolio/main/docs/modal2.jpeg)|
-|- 깃허브 스타일 사용(일부 css 수정)<br/>- 바로가기 링크 추가|
+| Project Modal                                                                           |
+|-----------------------------------------------------------------------------------------|
+| ![modal2](https://raw.githubusercontent.com/JinhyeokKo/Portfolio/main/docs/modal2.jpeg) |
+| - 깃허브 스타일 사용(일부 css 수정)<br/>- 바로가기 링크 추가                                                |
+
+| End                                                                                        |
+|--------------------------------------------------------------------------------------------|
+| ![section5](https://raw.githubusercontent.com/JinhyeokKo/Portfolio/main/docs/section5.jpg) |
+| - 소셜 링크 추가<br/>- 끝 맺음 표시                                                                   |
