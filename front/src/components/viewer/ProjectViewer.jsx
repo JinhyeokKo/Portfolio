@@ -31,7 +31,7 @@ export default function ProjectViewer({logo, title, description, term}) {
         <Container>
             <Title>{title} {description}</Title>
             <Description>{term}</Description>
-            <Img src={logo}/>
+            {logo && <Img src={logo}/>}
         </Container>
     )
 }
