@@ -27,4 +27,5 @@ export const projectItem = [
     {id: 2, title: "피어나다", description: "농림축산식품부 아이디어 기획 공모전", type:"ETC", tag:"Design", logo: Bloom, intro: "/bloomIntro.md", url: "/bloom.pdf"},
     {id: 3, title: "Portfolio", description: "개인 포트폴리오 사이트", term:"2025.03 ~ 2025.04", type:"Web", tag:"Front", logo: Portfolio, intro: "/portfolioIntro.md", url: "/portfolio.md"},
     {id: 4, title: "Project-Farm", description: "농림축산식품부 제품 및 서비스 개발 공모전", term:"2024.06 ~ 2024.07", type:"Web", tag:"Back", logo: Bloom, intro: "/farmIntro.md", url: "/farm.md"},
+    {id: 5, title: "SEMS", description: "ESP32 개인 프로젝트", term:"2025.01 ~ 2025.03", type:"MCU", tag:"MCU", intro: "/semsIntro.md", url: "/sems.md"},
 ];
