@@ -12,7 +12,7 @@
 * 실시간 작물의 병충해 및 성장 상태분석(농가 한정 제공)
 
 ## 담당 작업
-
+프로젝트를 진행하며 작업한 내역은 [릴리즈 노트](https://github.com/JinhyeokKo/Project_Farm/releases)를 통해 확인하실 수 있습니다.
 ### 주요 기능 및 특징
 * 사용자간 1:1 채팅 기능
 * 포스팅 기능을 통한 농가정보 및 사용자 커뮤니티 형성
@@ -61,6 +61,7 @@
 
 ### 기능 별 리포지토리
 * [프로젝트 Overview](https://github.com/JinhyeokKo/Project_Farm)
+* [프로젝트 Releases](https://github.com/JinhyeokKo/Project_Farm/releases)
 * [프론트엔드 전체 코드](https://github.com/kyung89/frontened_proto_kyung)
 * [백엔드 전체 코드](https://github.com/JinhyeokKo/Project_Farm/tree/master/MFP)
 * [안드로이드 앱 전체 코드](https://github.com/JinhyeokKo/Project_Farm/tree/master/MFP2)
