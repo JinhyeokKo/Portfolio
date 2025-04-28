@@ -1,5 +1,5 @@
 import {Container, ContentTitle, Description, Section, Title} from "../ui/CommonStyles.jsx";
-import {about} from "../data/Dummy.jsx";
+import {about} from "../data/Data.jsx";
 import styled from "styled-components";
 
 const List = styled.ul`
@@ -25,10 +25,10 @@ export default function Interview() {
             <Container>
                 <Title>Interview</Title>
                 <List>
-                    {about.map((blog) => (
-                        <ListItem key={blog.id}>
-                            <ContentTitle>{blog.title}</ContentTitle>
-                            <Description>{blog.description}</Description>
+                    {about.map((about) => (
+                        <ListItem key={about.id}>
+                            <ContentTitle>{about.title}</ContentTitle>
+                            <Description>{about.description}</Description>
                         </ListItem>
                     ))}
                 </List>

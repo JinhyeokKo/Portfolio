@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react";
 import {Container, Section, Title} from "../ui/CommonStyles.jsx"
 import CarouselWrapper from "../carousel/CarouselWrapper.jsx";
-import {dummyProjects} from "../data/Dummy.jsx";
+import {projectItem} from "../data/Data.jsx";
 import ProjectListItem from "../list/ProjectListItem.jsx";
 import styled from "styled-components";
 import Modal from "../ui/Modal.jsx";
@@ -44,12 +44,12 @@ export default function Project() {
     const [selectedProject, setSelectedProject] = useState(null);
 
     useEffect(() => {
-        setProjects(dummyProjects);
+        setProjects(projectItem);
 
-        const types = ["All", ...new Set(dummyProjects.map(project => project.type))];
+        const types = ["All", ...new Set(projectItem.map(project => project.type))];
         setProjectTypes(types);
 
-        setDisplayedProjects(dummyProjects);
+        setDisplayedProjects(projectItem);
     }, []);
 
     const filterByType = (type) => {
