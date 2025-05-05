@@ -121,7 +121,8 @@ export default function Cover({isLastPage = false}) {
                                                 rel="noopener noreferrer">Github</StyledExternalLink>
                         </LinkItem>
                         <LinkItem>
-                            <StyledLink to="/blog">Blog</StyledLink>
+                            <StyledExternalLink href="https://jinhyeokko.github.io/" target="_blank"
+                                                rel="noopener noreferrer">Blog</StyledExternalLink>
                         </LinkItem>
                         <LinkItem>
                             <StyledLink to="/">Resume</StyledLink>
